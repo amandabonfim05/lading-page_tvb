@@ -3,12 +3,12 @@
 HTML/CSS puro, sem framework e sem bibliotecas. Fontes e ícones ficam dentro do projeto (nada vem do Google Fonts nem de CDN).
 
 ```
-index.html          ← a página
-obrigado/index.html ← página de conversão: registra o lead e abre o WhatsApp
-fonts/              ← Playfair Display + DM Sans (woff2, só os pesos usados)
-img/foto-1..3.webp  ← fotos do carrossel (1 Lucas, 2 Murilo, 3 os dois)
-favicon.png         ← monograma TVB (ícone da aba)
-img/logo.webp       ← logo (fundo transparente)
+public/index.html          ← a página
+public/obrigado/index.html ← página de conversão: registra o lead e abre o WhatsApp
+public/fonts/              ← Playfair Display + DM Sans (woff2, só os pesos usados)
+public/img/foto-1..3.webp  ← fotos do carrossel (1 Lucas, 2 Murilo, 3 os dois)
+public/favicon.png         ← monograma TVB (ícone da aba)
+public/img/logo.webp       ← logo (fundo transparente)
 ```
 
 ## 1. O que trocar antes de publicar
@@ -38,6 +38,9 @@ No **Google Tag Manager**:
 - Também são enviados os eventos `whatsapp_click` (no clique, na página principal) e `lead_whatsapp` (na `/obrigado`), caso você prefira usar evento.
 
 ## 3. Publicar (grátis)
+
+**Cloudflare Workers (em uso):** o `wrangler.jsonc` publica a pasta `public/`. Na Cloudflare: Build command vazio, Deploy command `npx wrangler deploy`.
+
 
 **Vercel:** em vercel.com, escolha *Add New → Project*, importe o repositório do GitHub (ou arraste a pasta) e clique em Deploy. Não precisa de configuração.
 **Netlify:** em app.netlify.com/drop, arraste a pasta inteira.
